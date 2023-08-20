@@ -1,0 +1,30 @@
+body {
+    background-color: white;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+div {
+    margin: 0%;
+    
+}
+h2 {
+    font-weight: normal;
+}
+h1 {
+    line-height: 2;
+}
+h1, h2 {
+    color: #66BFBF;
+}
+h3, a {
+    color: #11999E;
+}
+
+#top_cloud {
+    position: relative;
+    left: 200px;
+}
+#bottom_cloud {
+    position: absolute;
+    top: 200px;
+}

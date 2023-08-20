@@ -1,0 +1,22 @@
+.container {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: absolute;
+}
+#red {
+    background-color: red;
+    left: 200px;
+    top: 200px;
+    
+}
+#blue {
+    background-color: blue;
+    left: 100px;
+    top: 100px;
+}
+#yellow {
+    background-color: yellow;
+    left: 0px;
+    top: 0px;
+}
