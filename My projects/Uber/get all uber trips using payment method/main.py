@@ -16,9 +16,9 @@ def input_the_code(method: str, code: str):
     driver.find_element(By.ID, f"PHONE_{method}_OTP-3").send_keys(code[3])
 
 
-options = webdriver.FirefoxOptions()
-options.add_argument("-headless")
-driver = webdriver.Firefox(options=options)
+options = webdriver.ChromeOptions()
+# options.add_argument("-headless")
+driver = webdriver.Chrome(options=options)
 driver.get("https://auth.uber.com/v2/")
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "PHONE_NUMBER_or_EMAIL_ADDRESS"))).send_keys(MAIL_ADRESS, Keys.ENTER)
 
@@ -69,6 +69,7 @@ trips_links = []
 
 
 def get_page_trips(direction: int) -> list:
+    sleep(1)
     global trips_links
     page_trips = driver.find_elements(By.CLASS_NAME, "_css-hBHgGw")
     j = 0
@@ -83,7 +84,7 @@ def get_page_trips(direction: int) -> list:
             driver.quit()
 
     for trip in page_trips:
-        if trip.get_attribute("href") not in trips_links and trip.text.lower() == "mais informações":
+        if trip.get_attribute("href") not in trips_links and trip.text.lower() in ["view details", "mais informações"]:
             trips_links.append(trip.get_attribute("href"))
             
     if i != number_of_pages - 1:
