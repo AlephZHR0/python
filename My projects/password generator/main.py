@@ -10,4 +10,4 @@ password = ''
 for _ in range(length):
     password += choice(PRINTABLES_LIST)
 pyperclip.copy(password)
-print('Passwordwas copied to clipboard.')
+print('Password was copied to clipboard.')
